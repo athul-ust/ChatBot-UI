@@ -2,10 +2,9 @@ import React from 'react';
 import userIcon from '../assets/user.svg';
 import reactIcon from '../assets/react.svg';
 
-
-const ChatList = ({ chats }) => {
+const ChatList = ({ chats, chatListRef }) => {
     return (
-        <div className="chat-list">
+        <div ref={chatListRef} className="chat-list"> {/* Add the ref to the div */}
             {chats.map((chat, index) => (
                 <div key={index} className={`message ${chat.sender}`}>
                     <div className="message-content">

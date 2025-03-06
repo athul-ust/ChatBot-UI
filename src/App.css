@@ -41,7 +41,10 @@ body {
 
 .header {
   padding: 1rem;
-  overflow-x: hidden;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+  margin-top: -90px;
 }
 
 body.hide-header .header {
@@ -121,16 +124,22 @@ body.hide-header .header {
 }
 
 .chat-list {
-  padding: 90px;
-  max-height: 100vh;
+  max-height: calc(100vh - 160px);
   overflow-y: auto;
-  scrollbar-color: #999 transparent;
-  overflow: hidden;
+  overflow-x: hidden;
+  padding: 10px 300px;
+  scrollbar-color: transparent;
+  scrollbar-width: none;
+}
+
+.chat-list::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, and Opera */
 }
 
 
 .chat-list .message.incoming {
-  margin-top: 1.5rem;
+  margin-top: 10px;
 }
 
 .chat-list .message .message-content {
@@ -237,7 +246,7 @@ body.hide-header .header {
   width: 100%;
   left: 0;
   bottom: 0;
-  padding: 1rem;
+  /* padding: 1rem; */
   background: var(--primary-color);
 }
 
